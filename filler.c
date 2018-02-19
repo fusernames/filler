@@ -6,7 +6,7 @@
 /*   By: alcaroff <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 06:00:01 by alcaroff          #+#    #+#             */
-/*   Updated: 2018/02/14 07:10:19 by alcaroff         ###   ########.fr       */
+/*   Updated: 2018/02/19 13:19:07 by alcaroff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,21 @@
 
 int		main(void)
 {
-	char	*line;
 	int		fd;
+	char	*line;
 
-	fd = open("test", O_RDWR|O_APPEND|O_CREAT, 0666);
-	while ((get_next_line(1, &line)) > 0)
+	*line = 'a';
+	while (*line ==	'a')
 	{
-		write(fd, line, ft_strlen(line));
+		*line = 'b';
+		fd = open("test", O_RDWR|O_APPEND|O_CREAT, 0666);
+		while (line)
+		{
+			get_next_line(0, &line);
+			write(fd, line, ft_strlen(line));
+		}
+		close(fd);
+		write(1, "8 2\n", 4);
 	}
 	return (0);
 }

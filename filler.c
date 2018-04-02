@@ -14,21 +14,26 @@
 
 int		main(void)
 {
-	int		fd;
-	char	*line;
+	t_filler	*data;
+	int			ret;
 
-	*line = 'a';
-	while (*line ==	'a')
+	data = ft_parser_launch();
+	while (1)
 	{
-		*line = 'b';
-		fd = open("test", O_RDWR|O_APPEND|O_CREAT, 0666);
-		while (line)
-		{
-			get_next_line(0, &line);
-			write(fd, line, ft_strlen(line));
-		}
-		close(fd);
-		write(1, "8 2\n", 4);
+		ft_parser_map(data);
+		ft_parser_piece(data);
+		data->res[0] = 0;
+		data->res[1] = 0;
+		ret = ft_resolve(data);
+		ft_putstr(ft_itoa(data->res[0]));
+		ft_putchar(' ');
+		ft_putstr(ft_itoa(data->res[1]));
+		ft_putchar('\n');
+		ft_tabfree(data->map);
+		ft_tabfree(data->piece);
+		if (ret == -1)
+			break;
 	}
+	free(data);
 	return (0);
 }

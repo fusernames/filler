@@ -10,12 +10,18 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	resources/players/alcaroff.filler
+NAME			=	alcaroff.filler
 FLAGS			=	-Wall -Werror -Wextra
 LIBFT			= 	libft/libft.a
 LIBFT_INCLUDES	=	libft/includes
 INCLUDES		= 	includes
-SRC				=	$(wildcard *.c)
+SRC				=	filler.c \
+	ft_can_place.c \
+	ft_parser.c \
+	ft_place.c \
+	ft_resolve.c \
+	ft_score.c \
+	ft_tabfree.c
 OBJ				=	$(SRC:.c=.o)
 
 all: $(LIBFT) $(NAME)

@@ -6,7 +6,7 @@
 #    By: alcaroff <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/14 06:10:43 by alcaroff          #+#    #+#              #
-#    Updated: 2018/08/13 08:16:51 by alcaroff         ###   ########.fr        #
+#    Updated: 2018/08/13 09:11:54 by alcaroff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ FLAGS			=	-Wall -Werror -Wextra
 LIBFT			= 	libft/libft.a
 LIBFT_INCLUDES	=	libft/includes
 INCLUDES		= 	includes
-SRC				=	filler.c \
+SRC				=	\
+	filler.c \
 	ft_can_place.c \
 	ft_parser.c \
 	ft_place.c \

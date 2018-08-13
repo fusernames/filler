@@ -6,7 +6,7 @@
 /*   By: alcaroff <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 06:00:01 by alcaroff          #+#    #+#             */
-/*   Updated: 2018/08/13 08:01:18 by alcaroff         ###   ########.fr       */
+/*   Updated: 2018/08/13 09:08:30 by alcaroff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ int		main(void)
 		data->res[0] = 0;
 		data->res[1] = 0;
 		ret = ft_resolve(data);
+		ft_tabfree(data->map);
+		ft_tabfree(data->piece);
 		ft_putstr(ft_itoa(data->res[0]));
 		ft_putchar(' ');
 		ft_putstr(ft_itoa(data->res[1]));
 		ft_putchar('\n');
-		ft_tabfree(data->map);
-		ft_tabfree(data->piece);
 		if (ret == -1)
 			break ;
 	}

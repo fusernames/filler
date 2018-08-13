@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_score.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alcaroff <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/13 08:10:19 by alcaroff          #+#    #+#             */
+/*   Updated: 2018/08/13 08:10:21 by alcaroff         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "filler.h"
 
 static int	ft_radius(t_filler *data, int y, int x, char c)
 {
-	int score;
-	int border;
-	char **map;
+	int		score;
+	int		border;
+	char	**map;
 
 	map = data->map;
 	score = 0;
@@ -33,11 +45,10 @@ static int	ft_calculator(t_filler *data, int y, int x)
 	int		score;
 
 	score = 0;
-	score += ft_radius(data, y, x, data->player2) * 20;
-	score += ft_radius(data, y, x, data->player) * 4;
-	score += ft_radius(data, y, x, '.') * 4;
-	score += ft_radius(data, y, x, 'M') * 4;
-			
+	score += ft_radius(data, y, x, data->player2) * 30;
+	score += ft_radius(data, y, x, data->player) * 2;
+	score += ft_radius(data, y, x, '.') * 2;
+	score += ft_radius(data, y, x, 'M') * 1;
 	return (score);
 }
 
@@ -58,7 +69,7 @@ int			ft_score(t_filler *data)
 				score += ft_calculator(data, y, x);
 			x++;
 		}
-		y++;		
+		y++;
 	}
 	return (score);
 }

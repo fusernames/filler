@@ -6,7 +6,7 @@
 /*   By: alcaroff <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/18 08:05:16 by alcaroff          #+#    #+#             */
-/*   Updated: 2018/02/18 08:06:03 by alcaroff         ###   ########.fr       */
+/*   Updated: 2018/08/13 08:09:07 by alcaroff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_filler	*ft_parser_launch(void)
 	return (data);
 }
 
-int		ft_parser_map(t_filler *data)
+int			ft_parser_map(t_filler *data)
 {
 	char	*line;
 	int		i;
@@ -55,7 +55,7 @@ int		ft_parser_map(t_filler *data)
 	return (0);
 }
 
-int		ft_parser_piece(t_filler *data)
+int			ft_parser_piece(t_filler *data)
 {
 	char	*line;
 	char	**tab;
@@ -74,7 +74,7 @@ int		ft_parser_piece(t_filler *data)
 	{
 		get_next_line(0, &line);
 		data->piece[i++] = ft_strdup(line);
-	} 
+	}
 	ft_tabfree(tab);
 	return (0);
 }

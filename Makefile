@@ -6,7 +6,7 @@
 #    By: alcaroff <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/14 06:10:43 by alcaroff          #+#    #+#              #
-#    Updated: 2018/02/14 06:55:44 by alcaroff         ###   ########.fr        #
+#    Updated: 2018/08/13 08:16:51 by alcaroff         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,7 @@ SRC				=	filler.c \
 	ft_parser.c \
 	ft_place.c \
 	ft_resolve.c \
-	ft_score.c \
-	ft_tabfree.c
+	ft_score.c
 OBJ				=	$(SRC:.c=.o)
 
 all: $(LIBFT) $(NAME)

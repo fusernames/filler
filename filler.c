@@ -6,7 +6,7 @@
 /*   By: alcaroff <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 06:00:01 by alcaroff          #+#    #+#             */
-/*   Updated: 2018/02/19 13:19:07 by alcaroff         ###   ########.fr       */
+/*   Updated: 2018/08/13 08:01:18 by alcaroff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		main(void)
 		ft_tabfree(data->map);
 		ft_tabfree(data->piece);
 		if (ret == -1)
-			break;
+			break ;
 	}
 	free(data);
 	return (0);
